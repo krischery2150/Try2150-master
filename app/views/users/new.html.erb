@@ -1,0 +1,39 @@
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+
+
+ <!-- this code is the code that display the user avatar.-->
+
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user)  do |f| %>
+    <%= render 'shared/error_messages' %>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %><br >
+
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %><br >
+
+      <%= f.label :user_about_me %>
+      <%= f.text_field :user_about_me %><br >
+
+      <%= f.label :birthday %>
+      <%= f.date_select :birthday%><br >
+
+      <%= f.label :email %>
+      <%= f.email_field :email %><br >
+
+
+      <%= f.file_field :avatar %><br >
+
+      <%= f.label :password %>
+      <%= f.password_field :password %><br >
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %><br >
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

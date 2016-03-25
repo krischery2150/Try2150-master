@@ -1,0 +1,23 @@
+
+  <nav class="navbar navbar-inverse">
+        <p class="description-text">
+        </p>
+        <% if logged_in? %>
+        <ul>
+            <li class="logged_nav_links"><%= link_to "Log Out", logout_path, method: "delete" %></li>
+            <li class="divider"></li>
+            <li class="logged_nav_links"> <%= link_to "Home", root_path %></li>
+            <li class="divider"></li>
+            <li class="logged_nav_links"><%= link_to "Manuscript", manuscript_path %> </li>
+            <li class="divider"></li>
+            <li class="logged_nav_links"><%= link_to "NewsFeed", newsfeed_path%></li>
+
+        <% else %>
+            <li><button type="button" class="btn btn-secondary btn-lg btn-block">
+              <%= link_to "SIGN UP", signup_path %></button></li>
+              <p class="description-text">
+                This paragraph is going to be the description of 2150.
+              </p>
+        <% end %>
+        </ul>
+    </nav>
