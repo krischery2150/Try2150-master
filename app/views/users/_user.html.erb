@@ -1,0 +1,11 @@
+<div class="col-md-9 col-offset-3" id="index-profile">
+  <ul class="users">
+    <% @users.each do |user| %>
+      <li>
+        <div class="col-xs-3 profilepic-container"><%= image_tag user.avatar.url %></div>
+        <%= link_to user.first_name, user %>
+
+
+      </li>
+    <% end %>
+  </ul>

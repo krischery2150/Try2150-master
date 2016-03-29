@@ -1,6 +1,5 @@
 class StaticPagesController < ApplicationController
   def home
-    @user = User.new
   end
 
   def profile
@@ -10,9 +9,6 @@ class StaticPagesController < ApplicationController
   end
 
   def manuscript
-  end
-
-  def index
   end
 
   def search
