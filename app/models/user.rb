@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   before_save {self.email = email.downcase}
   attr_accessor :remember_token
 
@@ -7,8 +8,7 @@ class User < ActiveRecord::Base
   # this before_save is a callback method. What it does is before it saves the email
   #address it calls back and transforms all the letters into lower case. Had to do the indexing
   #in active record in order for the method to work
-  validates :first_name , presence: true, length: {maximum: 15}
-  validates :last_name, presence: true
+  validates :username , presence: true, length: {maximum: 250}
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     #code that ensures that a user  puts the right format for emails in signup
     #fields

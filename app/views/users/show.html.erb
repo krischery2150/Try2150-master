@@ -1,12 +1,13 @@
-<% provide(:title, @user.first_name) %>
+<% provide(:title, @user.username) %>
 <div class="col-md-9 col-offset-1" id="update-profile">
   <div class="col-xs-3 profilepic-container">
    <%= image_tag @user.avatar.url %>
-
   </div>
 
   <div class="col-xs-9">
-    <%= @user.first_name %> <%= @user.last_name %>, <%= @user.email %>
+    <%= @user.username %><br >
+    <%= @user.email %>
+    <%= @user.gender %>
     <%= link_to "Users", users_path %>
   </div>
 </div>

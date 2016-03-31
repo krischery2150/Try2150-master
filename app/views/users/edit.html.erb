@@ -5,26 +5,25 @@
 
     <%= form_for(@user)  do |f| %>
     <%= render 'shared/error_messages' %>
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name, class: 'form-control' %>
-
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name, class: 'form-control' %>
+      <%= f.label :name %>
+      <%= f.text_field :username,:placeholder => "Enter First and Last name", class: 'form-control' %><br >
 
       <%= f.label :user_about_me %><br >
       <%= f.text_field :user_about_me, class: 'form-control' %><br >
 
       <%= f.label :email %><br >
-      <%= f.email_field :email, class: 'form-control'  %><br >
+      <%= f.email_field :email, :placeholder => "Enter your email", class: 'form-control'  %><br >
 
       <%= f.label :birthday %><br >
-      <%= f.date_select :birthday, class:'form-control'%>
+      <%= f.date_select :birthday, class:'form-control'%><br >
+
+      <%= f.select :gender, [["Unspecified", 1], ["Male", 2], ["Female", 3]] %>
 
       <%= f.label :password %><br >
-      <%= f.password_field :password, class:'form-control'%>
+      <%= f.password_field :password,:placeholder => "Enter New Password", class:'form-control'%><br >
 
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation , class:'form-control'%><br >
+      <%= f.password_field :password_confirmation, :placeholder => "Confirm Password", class:'form-control'%><br >
 
       <%= f.submit "Save Changes", class: "btn btn-primary" %>
       <%= f.file_field :avatar %><br >
